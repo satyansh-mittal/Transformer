@@ -1,0 +1,15 @@
+{
+    "d_model": 256,
+    "heads": 8,
+    "SPECIAL_TOKENS": {
+        "<pad>": 0,
+        "<unk>": 1,
+        "<sos>": 2,
+        "<eos>": 3
+    },
+    "dropout": 0.1,
+    "max_len": 50,
+    "N_EPOCHS": 100,
+    "num_layers": 4,
+    "batch_size": 256
+}
