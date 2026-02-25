@@ -28,48 +28,6 @@ Input (Hindi)   ──► Embedding + Positional Encoding ──► Decoder Stac
 
 ---
 
-## 📁 Project Structure
-
-```
-Transformers/
-├── README.md
-├── code.ipynb                  # Model 1: Paper-scale Transformer (44M params)
-└── transformers/               # Model 2: Optimized Transformer (15M params)
-    ├── main.py                 # Entry point — train / inference / checkpoint loading
-    ├── train.py                # Training loop with DDP support
-    ├── inference.py            # Greedy decoding for translation
-    ├── transformer.py          # Transformer model (Encoder + Decoder + Linear head)
-    ├── encoder.py              # Encoder layer (Self-Attention + FFN + LayerNorm)
-    ├── decoder.py              # Decoder layer (Self-Attn + Cross-Attn + FFN + LayerNorm)
-    ├── attention.py            # Scaled Dot-Product & Multi-Head Attention
-    ├── feed_forward.py         # Position-wise Feed-Forward Network
-    ├── lr_scheduler.py         # Noam LR scheduler
-    ├── data.py                 # Dataset loading & collation (HuggingFace datasets)
-    ├── utils.py                # Vocabulary, tokenizer, positional encoding, masks
-    ├── config.json             # Hyperparameters
-    ├── model_info.sh           # Script to print model architecture summary
-    ├── model_summary.txt       # Saved output of model_info.sh
-    ├── requirements.txt        # Python dependencies
-    ├── checkpoint.pt           # Final model checkpoint
-    └── checkpoint_best.pt      # Best model checkpoint (lowest loss)
-```
-
----
-
-## 🚀 Getting Started
-
-### Prerequisites
-
-- Python 3.11+
-- PyTorch 2.x with CUDA support
-- NVIDIA GPU(s)
-
-### Installation
-
-```bash
-cd transformers/
-pip install -r requirements.txt
-```
 
 ### Training
 
@@ -175,6 +133,20 @@ This model uses an optimized architecture — 4 encoder layers, 4 decoder layers
 - **Languages:** English → Hindi
 
 ---
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Python 3.11+
+- PyTorch 2.x with CUDA support
+- NVIDIA GPU(s)
+
+### Installation
+
+```bash
+cd transformers/
+pip install -r requirements.txt
+```
 
 ## 📝 References
 
