@@ -80,7 +80,7 @@ Two models were built:
 | **Heads** | 8 | 8 |
 | **FFN inner dim** | 2,048 | 1,024 |
 | **Dataset size** | 2,000 pairs | 1,659,083 pairs |
-| **GPU** | NVIDIA RTX 3050 Ti (4 GB) | 4 × NVIDIA H100 80 GB |
+| **GPU** | NVIDIA RTX 3050 Ti (4 GB) |  |
 | **Training time** | ~30 min | ~10.5 hours |
 | **Train Loss** | 2.169 | 2.786 |
 | **Train PPL** | 8.748 | 16.211 |
@@ -337,7 +337,7 @@ Going from Model 1 to Model 2 involved three key changes:
 
 1. **Smaller architecture** — d_model 512 → 256, layers 6 → 4. 44M → 15M params.
 2. **Full dataset** — 2,000 → 1,659,083 sentence pairs (~830× more data).
-3. **Distributed training** — PyTorch DDP across 4 × NVIDIA H100 80 GB GPUs.
+3. **Distributed training** — PyTorch DDP.
 
 ### Distributed Data Parallel (DDP)
 
@@ -351,7 +351,7 @@ CUDA_VISIBLE_DEVICES=3,4,5,6 torchrun --nproc_per_node=4 main.py
 With a per-GPU batch size of 256 and 4 GPUs, the **effective batch size = 1,024**.
 
 ![Training Setup Comparison](medium_story_assets/09_training_setup.png)
-*Figure 6: Model 1 trained for ~30 minutes on a laptop GPU with 2,000 samples. Model 2 trained for ~10.5 hours on 4× H100s with 1.66M samples — a completely different scale.*
+*Figure 6: Model 1 trained for ~30 minutes on a laptop GPU with 2,000 samples. Model 2 trained for ~10.5 hours with 1.66M samples — a completely different scale.*
 
 ### Training Loss
 
