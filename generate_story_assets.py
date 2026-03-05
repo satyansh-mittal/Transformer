@@ -401,7 +401,7 @@ def plot_architecture():
 
 # ── 9. DDP Training Speed-up diagram ──────────────────────────────────────────
 def plot_ddp_speedup():
-    setups = ["1× RTX 3050 Ti\n(4 GB)\n2,000 samples", "4× H100 80 GB\n(DDP)\n1.66M samples"]
+    setups = ["1× RTX 3050 Ti\n(4 GB)\n2,000 samples", "(DDP)\n1.66M samples"]
     times_h = [0.5, 10.5]
     colors = [ACCENT4, ACCENT1]
 
